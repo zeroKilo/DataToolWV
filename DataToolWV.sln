@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31402.337
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataToolWV", "DataToolWV\DataToolWV.csproj", "{167AE3FC-B8FA-4A2F-8745-673FDA0E1E64}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{167AE3FC-B8FA-4A2F-8745-673FDA0E1E64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{167AE3FC-B8FA-4A2F-8745-673FDA0E1E64}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {110EFFD9-F55B-4670-9C30-834943160F5A}
+	EndGlobalSection
+EndGlobal
