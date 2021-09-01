@@ -35,6 +35,15 @@ namespace DataToolWV
             this.xORAWithBPlusOffsetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aESDecryptAWithBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aESEncryptAWithBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.blowfishDecryptAWithBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.blowfishEncryptAWithBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.base64EncodeAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.base64DecodeAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zLIBCompressAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zLIBDecompressAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.swap4ByteEndianessAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.swap8ByteEndianessAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.rtba = new System.Windows.Forms.RichTextBox();
@@ -44,10 +53,6 @@ namespace DataToolWV
             this.rtbr = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pb1 = new System.Windows.Forms.ProgressBar();
-            this.base64EncodeAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.base64DecodeAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zLIBCompressAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zLIBDecompressAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -76,10 +81,15 @@ namespace DataToolWV
             this.xORAWithBPlusOffsetToolStripMenuItem,
             this.aESDecryptAWithBToolStripMenuItem,
             this.aESEncryptAWithBToolStripMenuItem,
+            this.blowfishDecryptAWithBToolStripMenuItem,
+            this.blowfishEncryptAWithBToolStripMenuItem,
+            this.toolStripMenuItem1,
             this.base64EncodeAToolStripMenuItem,
             this.base64DecodeAToolStripMenuItem,
             this.zLIBCompressAToolStripMenuItem,
-            this.zLIBDecompressAToolStripMenuItem});
+            this.zLIBDecompressAToolStripMenuItem,
+            this.swap4ByteEndianessAToolStripMenuItem,
+            this.swap8ByteEndianessAToolStripMenuItem});
             this.actionToolStripMenuItem.Name = "actionToolStripMenuItem";
             this.actionToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.actionToolStripMenuItem.Text = "Action";
@@ -88,7 +98,7 @@ namespace DataToolWV
             // 
             this.xORAWithBToolStripMenuItem.Name = "xORAWithBToolStripMenuItem";
             this.xORAWithBToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.xORAWithBToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.xORAWithBToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.xORAWithBToolStripMenuItem.Text = "XOR A with B";
             this.xORAWithBToolStripMenuItem.Click += new System.EventHandler(this.xORAWithBToolStripMenuItem_Click);
             // 
@@ -96,7 +106,7 @@ namespace DataToolWV
             // 
             this.xORAWithBPlusOffsetToolStripMenuItem.Name = "xORAWithBPlusOffsetToolStripMenuItem";
             this.xORAWithBPlusOffsetToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.xORAWithBPlusOffsetToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.xORAWithBPlusOffsetToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.xORAWithBPlusOffsetToolStripMenuItem.Text = "XOR A with B plus Offset";
             this.xORAWithBPlusOffsetToolStripMenuItem.Click += new System.EventHandler(this.xORAWithBPlusOffsetToolStripMenuItem_Click);
             // 
@@ -104,7 +114,7 @@ namespace DataToolWV
             // 
             this.aESDecryptAWithBToolStripMenuItem.Name = "aESDecryptAWithBToolStripMenuItem";
             this.aESDecryptAWithBToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.aESDecryptAWithBToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.aESDecryptAWithBToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.aESDecryptAWithBToolStripMenuItem.Text = "AES Decrypt A with B";
             this.aESDecryptAWithBToolStripMenuItem.Click += new System.EventHandler(this.aESDecryptAWithBToolStripMenuItem_Click);
             // 
@@ -112,9 +122,78 @@ namespace DataToolWV
             // 
             this.aESEncryptAWithBToolStripMenuItem.Name = "aESEncryptAWithBToolStripMenuItem";
             this.aESEncryptAWithBToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F4;
-            this.aESEncryptAWithBToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.aESEncryptAWithBToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.aESEncryptAWithBToolStripMenuItem.Text = "AES Encrypt A with B";
             this.aESEncryptAWithBToolStripMenuItem.Click += new System.EventHandler(this.aESEncryptAWithBToolStripMenuItem_Click);
+            // 
+            // blowfishDecryptAWithBToolStripMenuItem
+            // 
+            this.blowfishDecryptAWithBToolStripMenuItem.Name = "blowfishDecryptAWithBToolStripMenuItem";
+            this.blowfishDecryptAWithBToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
+            this.blowfishDecryptAWithBToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.blowfishDecryptAWithBToolStripMenuItem.Text = "Blowfish Decrypt A with B";
+            this.blowfishDecryptAWithBToolStripMenuItem.Click += new System.EventHandler(this.blowfishDecryptAWithBToolStripMenuItem_Click);
+            // 
+            // blowfishEncryptAWithBToolStripMenuItem
+            // 
+            this.blowfishEncryptAWithBToolStripMenuItem.Name = "blowfishEncryptAWithBToolStripMenuItem";
+            this.blowfishEncryptAWithBToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F6;
+            this.blowfishEncryptAWithBToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.blowfishEncryptAWithBToolStripMenuItem.Text = "Blowfish Encrypt A with B";
+            this.blowfishEncryptAWithBToolStripMenuItem.Click += new System.EventHandler(this.blowfishEncryptAWithBToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(226, 6);
+            // 
+            // base64EncodeAToolStripMenuItem
+            // 
+            this.base64EncodeAToolStripMenuItem.Name = "base64EncodeAToolStripMenuItem";
+            this.base64EncodeAToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F7;
+            this.base64EncodeAToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.base64EncodeAToolStripMenuItem.Text = "Base64 Encode A";
+            this.base64EncodeAToolStripMenuItem.Click += new System.EventHandler(this.base64EncodeAToolStripMenuItem_Click);
+            // 
+            // base64DecodeAToolStripMenuItem
+            // 
+            this.base64DecodeAToolStripMenuItem.Name = "base64DecodeAToolStripMenuItem";
+            this.base64DecodeAToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F8;
+            this.base64DecodeAToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.base64DecodeAToolStripMenuItem.Text = "Base64 Decode A";
+            this.base64DecodeAToolStripMenuItem.Click += new System.EventHandler(this.base64DecodeAToolStripMenuItem_Click);
+            // 
+            // zLIBCompressAToolStripMenuItem
+            // 
+            this.zLIBCompressAToolStripMenuItem.Name = "zLIBCompressAToolStripMenuItem";
+            this.zLIBCompressAToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F9;
+            this.zLIBCompressAToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.zLIBCompressAToolStripMenuItem.Text = "ZLIB Compress A";
+            this.zLIBCompressAToolStripMenuItem.Click += new System.EventHandler(this.zLIBCompressAToolStripMenuItem_Click);
+            // 
+            // zLIBDecompressAToolStripMenuItem
+            // 
+            this.zLIBDecompressAToolStripMenuItem.Name = "zLIBDecompressAToolStripMenuItem";
+            this.zLIBDecompressAToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F10;
+            this.zLIBDecompressAToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.zLIBDecompressAToolStripMenuItem.Text = "ZLIB Decompress A";
+            this.zLIBDecompressAToolStripMenuItem.Click += new System.EventHandler(this.zLIBDecompressAToolStripMenuItem_Click);
+            // 
+            // swap4ByteEndianessAToolStripMenuItem
+            // 
+            this.swap4ByteEndianessAToolStripMenuItem.Name = "swap4ByteEndianessAToolStripMenuItem";
+            this.swap4ByteEndianessAToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F11;
+            this.swap4ByteEndianessAToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.swap4ByteEndianessAToolStripMenuItem.Text = "Swap 4 Byte Endianess A";
+            this.swap4ByteEndianessAToolStripMenuItem.Click += new System.EventHandler(this.swap4ByteEndianessAToolStripMenuItem_Click);
+            // 
+            // swap8ByteEndianessAToolStripMenuItem
+            // 
+            this.swap8ByteEndianessAToolStripMenuItem.Name = "swap8ByteEndianessAToolStripMenuItem";
+            this.swap8ByteEndianessAToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F12;
+            this.swap8ByteEndianessAToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.swap8ByteEndianessAToolStripMenuItem.Text = "Swap 8 Byte Endianess A";
+            this.swap8ByteEndianessAToolStripMenuItem.Click += new System.EventHandler(this.swap8ByteEndianessAToolStripMenuItem_Click);
             // 
             // splitContainer1
             // 
@@ -228,38 +307,6 @@ namespace DataToolWV
             this.pb1.TabIndex = 2;
             this.pb1.Visible = false;
             // 
-            // base64EncodeAToolStripMenuItem
-            // 
-            this.base64EncodeAToolStripMenuItem.Name = "base64EncodeAToolStripMenuItem";
-            this.base64EncodeAToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.base64EncodeAToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.base64EncodeAToolStripMenuItem.Text = "Base64 Encode A";
-            this.base64EncodeAToolStripMenuItem.Click += new System.EventHandler(this.base64EncodeAToolStripMenuItem_Click);
-            // 
-            // base64DecodeAToolStripMenuItem
-            // 
-            this.base64DecodeAToolStripMenuItem.Name = "base64DecodeAToolStripMenuItem";
-            this.base64DecodeAToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F6;
-            this.base64DecodeAToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.base64DecodeAToolStripMenuItem.Text = "Base64 Decode A";
-            this.base64DecodeAToolStripMenuItem.Click += new System.EventHandler(this.base64DecodeAToolStripMenuItem_Click);
-            // 
-            // zLIBCompressAToolStripMenuItem
-            // 
-            this.zLIBCompressAToolStripMenuItem.Name = "zLIBCompressAToolStripMenuItem";
-            this.zLIBCompressAToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F7;
-            this.zLIBCompressAToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.zLIBCompressAToolStripMenuItem.Text = "ZLIB Compress A";
-            this.zLIBCompressAToolStripMenuItem.Click += new System.EventHandler(this.zLIBCompressAToolStripMenuItem_Click);
-            // 
-            // zLIBDecompressAToolStripMenuItem
-            // 
-            this.zLIBDecompressAToolStripMenuItem.Name = "zLIBDecompressAToolStripMenuItem";
-            this.zLIBDecompressAToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F8;
-            this.zLIBDecompressAToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.zLIBDecompressAToolStripMenuItem.Text = "ZLIB Decompress A";
-            this.zLIBDecompressAToolStripMenuItem.Click += new System.EventHandler(this.zLIBDecompressAToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,6 +354,11 @@ namespace DataToolWV
         private System.Windows.Forms.ToolStripMenuItem base64DecodeAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zLIBCompressAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zLIBDecompressAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem blowfishDecryptAWithBToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem blowfishEncryptAWithBToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem swap4ByteEndianessAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem swap8ByteEndianessAToolStripMenuItem;
     }
 }
 

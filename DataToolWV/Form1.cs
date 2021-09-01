@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
 using System.Security.Cryptography;
+using Simias.Encryption;
 using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
 
 namespace DataToolWV
@@ -215,6 +216,88 @@ namespace DataToolWV
                     inf.CopyTo(m);
                     R = m.ToArray();
                 }
+                StringBuilder sb = new StringBuilder();
+                foreach (byte b in R)
+                    sb.Append(b.ToString("X2") + " ");
+                rtbr.Text = sb.ToString();
+            }
+            catch (Exception ex)
+            {
+                rtbr.Text = "Error:\n" + ex.Message;
+            }
+        }
+
+        private void blowfishDecryptAWithBToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                rtbr.Text = "";
+                byte[] R = GetDataA();
+                byte[] B = GetDataB();
+                Blowfish bf = new Blowfish(B);
+                bf.Decipher(R, R.Length);
+                StringBuilder sb = new StringBuilder();
+                foreach (byte b in R)
+                    sb.Append(b.ToString("X2") + " ");
+                rtbr.Text = sb.ToString();
+            }
+            catch (Exception ex)
+            {
+                rtbr.Text = "Error:\n" + ex.Message;
+            }
+        }
+
+        private void blowfishEncryptAWithBToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                rtbr.Text = "";
+                byte[] R = GetDataA();
+                byte[] B = GetDataB();
+                Blowfish bf = new Blowfish(B);
+                bf.Encipher(R, R.Length);
+                StringBuilder sb = new StringBuilder();
+                foreach (byte b in R)
+                    sb.Append(b.ToString("X2") + " ");
+                rtbr.Text = sb.ToString();
+            }
+            catch (Exception ex)
+            {
+                rtbr.Text = "Error:\n" + ex.Message;
+            }
+        }
+
+        private void swap4ByteEndianessAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                rtbr.Text = "";
+                byte[] A = GetDataA();
+                byte[] R = new byte[A.Length];
+                for (int i = 0; i < A.Length / 4; i++)
+                    for (int j = 0; j < 4; j++)
+                        R[i * 4 + (3 - j)] = A[i * 4 + j];
+                StringBuilder sb = new StringBuilder();
+                foreach (byte b in R)
+                    sb.Append(b.ToString("X2") + " ");
+                rtbr.Text = sb.ToString();
+            }
+            catch (Exception ex)
+            {
+                rtbr.Text = "Error:\n" + ex.Message;
+            }
+        }
+
+        private void swap8ByteEndianessAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                rtbr.Text = "";
+                byte[] A = GetDataA();
+                byte[] R = new byte[A.Length];
+                for (int i = 0; i < A.Length / 8; i++)
+                    for (int j = 0; j < 8; j++)
+                        R[i * 8 + (7 - j)] = A[i * 8 + j];
                 StringBuilder sb = new StringBuilder();
                 foreach (byte b in R)
                     sb.Append(b.ToString("X2") + " ");
